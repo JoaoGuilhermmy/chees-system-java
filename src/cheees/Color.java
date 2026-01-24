@@ -2,5 +2,5 @@ package cheees;
 
 public enum Color {
     BLACK,
-    WHITHE;
+    WHITHE, WHITE;
 }
