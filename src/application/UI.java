@@ -3,8 +3,8 @@ package application;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import cheees.CheesPiece;
-import cheees.CheesPosition;
+import cheees.ChessPiece;
+import cheees.ChessPosition;
 import cheees.Color;
 
 public class UI {
@@ -40,18 +40,18 @@ public class UI {
         }
     }
 
-    public static CheesPosition readCheesPosition(Scanner sc) {
+    public static ChessPosition readCheesPosition(Scanner sc) {
         try {
             String s = sc.nextLine();
             char column = s.charAt(0);
             int row = Integer.parseInt(s.substring(1));
-            return new CheesPosition(column, row);
+            return new ChessPosition(column, row);
         } catch (RuntimeException e) {
             throw new InputMismatchException("Error reading ChessPosition. Valid values are from a1 to h8");
         }
     }
 
-    public static void printBoard(CheesPiece[][] pieces) {
+    public static void printBoard(ChessPiece[][] pieces) {
         for (int i = 0; i < pieces.length; i++) {
             System.out.print((8 - i) + " ");
             for (int j = 0; j < pieces.length; j++) {
@@ -62,7 +62,7 @@ public class UI {
         System.out.println("  a b c d e f g h");
     }
 
-    private static void printPiece(CheesPiece piece) {
+    private static void printPiece(ChessPiece piece) {
         if (piece == null) {
             System.out.print("-");
         } else {
