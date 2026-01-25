@@ -1,6 +1,8 @@
 package cheees;
 
 import boardgame.Board;
+import boardgame.Piece;
+import boardgame.Position;
 import cheees.pieces.King;
 import cheees.pieces.Rook;
 
@@ -23,6 +25,27 @@ public class CheesMatch {
         }
 
         return mat;
+    }
+
+    public CheesPiece perfomCheesMove(CheesPosition sourcePosition, CheesPosition targertPosition) {
+        Position source = sourcePosition.toPosition();
+        Position target = targertPosition.toPosition();
+        ValidateSourcePosition(source);
+        Piece capturedPiece = makeMove(source, target);
+        return (CheesPiece) capturedPiece;
+    }
+
+    private void ValidateSourcePosition(Position position) {
+        if (!board.thereIsAPiece(position)) {
+            throw new CheesExcpition("There is no piece on source position");
+        }
+    }
+
+    private Piece makeMove(Position source, Position target) {
+        Piece p = board.removePiece(source);
+        Piece capturedPiece = board.removePiece(target);
+        board.placePiece(p, target);
+        return capturedPiece;
     }
 
     private void placeNewPiece(char column, int row, CheesPiece piece) {
