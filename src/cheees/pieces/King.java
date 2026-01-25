@@ -14,4 +14,10 @@ public class King extends CheesPiece {
     public String toString() {
         return "K";
     }
+
+    @Override
+    public boolean[][] possibleMoves() {
+        boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumn()];
+        return mat;
+    }
 }

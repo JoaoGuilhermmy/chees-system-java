@@ -14,4 +14,10 @@ public class Rook extends CheesPiece {
     public String toString() {
         return "R";
     }
+
+    @Override
+    public boolean[][] possibleMoves() {
+        boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumn()];
+        return mat;
+    }
 }
