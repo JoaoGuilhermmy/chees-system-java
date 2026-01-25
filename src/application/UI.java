@@ -2,7 +2,9 @@ package application;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.stream.Collector.Characteristics;
 
+import cheees.ChessMatch;
 import cheees.ChessPiece;
 import cheees.ChessPosition;
 import cheees.Color;
@@ -71,6 +73,13 @@ public class UI {
             System.out.println();
         }
         System.out.println("  a b c d e f g h");
+    }
+
+    public static void printMatch(ChessMatch chessMatch) {
+        printBoard(chessMatch.getPieces());
+        System.out.println();
+        System.out.println("Turn: " + chessMatch.getTurn());
+        System.out.println("Waiting player: " + chessMatch.getCurretPlayer());
     }
 
     private static void printPiece(ChessPiece piece, boolean background) {
