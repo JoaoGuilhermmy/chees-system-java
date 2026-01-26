@@ -5,10 +5,10 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-import cheees.ChessExcpition;
-import cheees.ChessMatch;
-import cheees.ChessPiece;
-import cheees.ChessPosition;
+import chess.ChessExcpition;
+import chess.ChessMatch;
+import chess.ChessPiece;
+import chess.ChessPosition;
 
 public class App {
     public static void main(String[] args) throws Exception {

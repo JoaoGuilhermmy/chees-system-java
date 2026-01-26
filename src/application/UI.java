@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-import cheees.ChessMatch;
-import cheees.ChessPiece;
-import cheees.ChessPosition;
-import cheees.Color;
+import chess.ChessMatch;
+import chess.ChessPiece;
+import chess.ChessPosition;
+import chess.Color;
 
 public class UI {
     public static final String ANSI_RESET = "\u001B[0m";
