@@ -13,29 +13,34 @@ import chess.ChessPosition;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        ChessMatch cheesMatch = new ChessMatch();
+        ChessMatch chessMatch = new ChessMatch();
         List<ChessPiece> captured = new ArrayList<>();
 
-        while (!cheesMatch.getCheckMate()) {
+        while (!chessMatch.getCheckMate()) {
             try {
                 UI.clearScreen();
-                UI.printMatch(cheesMatch, captured);
+                UI.printMatch(chessMatch, captured);
                 System.out.println();
                 System.out.print("Source: ");
                 ChessPosition source = UI.readCheesPosition(sc);
 
-                boolean[][] possibleMoves = cheesMatch.possibleMoves(source);
+                boolean[][] possibleMoves = chessMatch.possibleMoves(source);
                 UI.clearScreen();
-                UI.printBoard(cheesMatch.getPieces(), possibleMoves);
+                UI.printBoard(chessMatch.getPieces(), possibleMoves);
 
                 System.out.println();
                 System.out.print("Target: ");
                 ChessPosition targert = UI.readCheesPosition(sc);
 
-                ChessPiece capturedPiece = cheesMatch.perfomCheesMove(source, targert);
+                ChessPiece capturedPiece = chessMatch.perfomCheesMove(source, targert);
 
                 if (capturedPiece != null) {
                     captured.add(capturedPiece);
+                }
+                if (chessMatch.getPromoted() != null) {
+                    System.out.print("Enter piece for promotion (B/N/R/Q): ");
+                    String type = sc.nextLine();
+                    chessMatch.replacePromotedPiece(type);
                 }
             } catch (ChessExcpition e) {
                 System.out.println(e.getMessage());
@@ -46,7 +51,7 @@ public class App {
             }
         }
         UI.clearScreen();
-        UI.printMatch(cheesMatch, captured);
+        UI.printMatch(chessMatch, captured);
     }
 
 }
