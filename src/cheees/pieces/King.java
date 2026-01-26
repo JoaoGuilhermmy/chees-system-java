@@ -1,7 +1,5 @@
 package cheees.pieces;
 
-import java.nio.file.attribute.PosixFileAttributeView;
-
 import boardgame.Board;
 import boardgame.Position;
 import cheees.ChessPiece;
