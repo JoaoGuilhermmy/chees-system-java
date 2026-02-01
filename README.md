@@ -662,7 +662,7 @@ Este projeto ensina:
   
   ### João Guilhermmy
   
-  💼 Desenvolvedor Java | Entusiasta de POO e Clean Code
+  💼 Backend developer | java
   
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joão-guilhermmy-93661b29b)
   [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:joaoguilherrmmy@gmail.com)
